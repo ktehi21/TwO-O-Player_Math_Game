@@ -1,6 +1,6 @@
 class Question_maker
-  # OPERATORS = ['+', '-', '*', '/'].freeze
-  OPERATORS = ['+', '-'].freeze
+  OPERATORS = ['+', '-', '*', '/'].freeze
+  # OPERATORS = ['+', '-'].freeze
 
   def self.game_generate
     num1 = rand(1..20)
@@ -13,10 +13,10 @@ class Question_maker
         num1 + num2
       when '-'
         num1 - num2
-      # when '*'
-      #   num1 * num2
-      # when '/'
-      #   num1 / num2
+      when '*'
+        num1 * num2
+      when '/'
+        num1 / num2
     end
 
 
@@ -24,10 +24,10 @@ class Question_maker
       operator = "plus"
     elsif operator == "-"
       operator = "subtract"
-    # elsif operator == "/"
-    #   operator = "divide"
-    # elsif operator == "*"
-    #   operator = "multiply"
+    elsif operator == "/"
+      operator = "divide"
+    elsif operator == "*"
+      operator = "multiply"
     end
 
     question = "What does #{num1} #{operator} #{num2} equal?"
@@ -58,8 +58,10 @@ class Game
       else
         puts "Player #{@current_player}: Seriously? No !"
         decrease_lives()
-        change_player()
         break if @player1_lives == 0 || @player2_lives == 0
+        change_player()
+        puts "Player 1: #{@player1_lives}/3 vs Player 2: #{@player2_lives}/3"
+        puts "----- NEW TURN -----"
       end
 
     end
