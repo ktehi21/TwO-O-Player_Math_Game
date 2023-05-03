@@ -41,7 +41,6 @@ class Game
     @player1_lives = 3
     @player2_lives = 3
     @current_player = 1
-    @other_player = 2
   end
 
   def play
@@ -80,9 +79,9 @@ class Game
 
   def announce_winner
     if @current_player == 1
-      puts "Player #{@other_player} wins with a score of #{@player2_lives}/3"
+      puts "Player 2 wins with a score of #{@player2_lives}/3"
     else
-      puts "Player #{@other_player} wins with a score of #{@player1_lives}/3"
+      puts "Player 1 wins with a score of #{@player1_lives}/3"
     end
     puts "----- GAME OVER -----"
     puts "Good bye!"
@@ -91,10 +90,8 @@ class Game
   def change_player
     if @current_player == 1 
       @current_player = 2
-      @other_player = 1
     else
       @current_player = 1
-      @other_player = 2
     end
   end
 end
