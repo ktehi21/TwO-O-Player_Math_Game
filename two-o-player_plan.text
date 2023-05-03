@@ -1,0 +1,66 @@
+# Create a 2-Player math game where players take turns to answer simple math addition problems. A new math question is generated for each turn by picking two numbers between 1 and 20. The player whose turn it is is prompted the question and must answer correctly or lose a life.
+
+# Both players start with 3 lives. They lose a life if they mis-answer a question. At the end of every turn, the game should output the new scores for both players, so players know where they stand.
+
+# The game doesn’t end until one of the players loses all their lives. At this point, the game should announce who won and what the other player’s score is.
+
+# module question_maker / looping / pick random 2 numbers from 1-20 / and random operator (+ - / *)
+  # protected answer
+# answer detector / get the answer and match the question 
+  # initialize answer / get the protected answer from question_maker / and compare it and puts mention
+# lives counting if answer is correct pass, wrong -= 1
+# each player turn / take the turn each players time
+  # show the lives / and say it who's turn now
+
+# class question_maker
+  # number = [1..20]
+  # num1 = .select 
+  # num2 = .select 
+  # operator = ["+", "-", "/", "*"]
+  # pickOper = .select
+  # answer = num1 + pickOper + num2 : 2 + 1 : 3
+  # if pickOper = "+" -> "plus"
+  # if pickOper = "-" -> "m"
+  # if pickOper = "/" -> "d"
+  # if pickOper = "*" -> "m"
+  # question = "what does #{num1} #{pickOper} #{num2} equal?"
+  # puts question
+
+# class game 
+  # import question_maker 
+  # import player
+  # loop start: boolean (is game still on? )
+  # p1 :player.one
+  # p2 :player.two
+  # turns = p1
+  # question_maker.question()
+  # puts "#{turns} : question"
+
+  # playerAns = player.answer_detector 
+  # if playerAns == question_maker.answer "correct"
+  # else "wrong"
+  # turns.lives -= 1
+  # if turns.lives == 0 
+    # finish the loop : boolean = false
+    # if turns == p1
+      # puts "#{player.two} wins with a score of #{player.two.lives}/3" 
+    # else 
+      # puts "#{player.one} wins with a score of #{player.one.lives}/3" 
+    # puts "--- GAME OVER ---"
+    # puts "Good bye!"
+
+  # keep tracking lives
+  # puts "player.one: #{player.lives/3} vs player.two: #{player.lives/3}"
+
+  # keep tracking who's turn
+    # turns = name
+    # if turns == player.one 
+      # turns = player.two
+      # else turns = player.one
+
+  # player.lives = 0 -> loop end
+
+# class player -> new 2players
+  # def answer_detector
+  # def name : attr_reader
+  # def lives : 0 
